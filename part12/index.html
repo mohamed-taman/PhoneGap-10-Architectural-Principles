@@ -1,0 +1,54 @@
+<html>
+<head>
+    <link href="css/topcoat-mobile-min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/pageslider.css" rel="stylesheet">
+</head>
+<body>
+
+<script id="home-tpl" type="text/x-handlebars-template">
+    <div class="dark-header-bar"><p class="header-bar-title">Directory</p></div>
+    <div class='search-bar bg-slategray'>
+        <input type="search" class="search-key light-search-input" placeholder="Enter name">
+    </div>
+    <div class="scroller"></div><ul class='employee-list list light-list'></ul></div>
+</script>
+
+<script id="employee-li-tpl" type="text/x-handlebars-template">
+    {{#.}}
+    <li><a href="#employees/{{this.id}}">{{this.firstName}} {{this.lastName}}<br/>{{this.title}}</a></li>
+    {{/.}}
+</script>
+
+<script id="employee-tpl" type="text/x-handlebars-template">
+    <div class="dark-header-bar">
+        <a href="#" class="dark-button header-button-left">List</a>
+        <p class="header-bar-title">Employee</p>
+    </div>
+    <div class='details scroller'>
+        <img class='employee-image' src='pics/{{firstName}}_{{lastName}}.jpg'/>
+        <h1>{{firstName}} {{lastName}}</h1>
+        <h2>{{title}}</h2>
+        <span class="location"></span>
+        <ul class="light-combo-drop list">
+            <li><a href="tel:{{officePhone}}">Call Office<br/>{{officePhone}}</a></li>
+            <li><a href="tel:{{cellPhone}}">Call Cell<br/>{{cellPhone}}</a></li>
+            <li><a href="sms:{{cellPhone}}">SMS<br/>{{cellPhone}}</a></li>
+            <li><a href="#" class="add-location-btn">Add Location</a></li>
+            <li><a href="#" class="add-contact-btn">Add to Contacts</a></li>
+            <li><a href="#" class="change-pic-btn">Change Picture</a></li>
+        </ul>
+    </div>
+</script>
+
+<script src="phonegap.js"></script>
+<script src="lib/jquery-1.9.1.min.js"></script>
+<script src="lib/handlebars.js"></script>
+<script src="lib/pageslider.js"></script>
+<script src="js/adapters/memory-adapter.js"></script>
+<script src="js/HomeView.js"></script>
+<script src="js/EmployeeView.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
